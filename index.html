@@ -1,157 +1,136 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>ORBIT AI - Cinematic</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBIT AI | Prelude</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rajdhani:wght@500;700&display=swap');
-      
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #010204;
-        color: white;
-        overflow: hidden;
-        height: 100vh;
-        width: 100vw;
-      }
-      
-      h1, h2, h3, .hud-text {
-        font-family: 'Rajdhani', sans-serif;
-      }
-
-      /* CINEMATIC CAMERA VIGNETTE */
-      .vignette {
-        position: fixed;
-        inset: 0;
-        background: radial-gradient(circle, transparent 35%, rgba(0,0,0,0.7) 100%);
-        pointer-events: none;
-        z-index: 50;
-      }
-
-      /* NEURAL RIPPLE */
-      @keyframes neural-pulse {
-        0% { transform: scale(1); opacity: 0.8; border-width: 4px; }
-        100% { transform: scale(3.5); opacity: 0; border-width: 1px; }
-      }
-      .ripple-effect {
-        position: absolute;
-        border: 2px solid rgba(34, 211, 238, 0.4);
-        border-radius: 50%;
-        animation: neural-pulse 3s cubic-bezier(0.1, 0, 0.1, 1) infinite;
-      }
-
-      /* ENERGY PARTICLE FLOW */
-      @keyframes energy-particle {
-        0% { transform: translateX(-300px); opacity: 0; }
-        20% { opacity: 1; }
-        80% { opacity: 1; }
-        100% { transform: translateX(900px); opacity: 0; }
-      }
-
-      /* HYGIENE SCAN LINE */
-      @keyframes scan-line {
-        0% { transform: translateY(0); opacity: 0; }
-        10% { opacity: 1; }
-        50% { opacity: 1; filter: brightness(2); }
-        90% { opacity: 1; }
-        100% { transform: translateY(800px); opacity: 0; }
-      }
-
-      /* WASTE FLOW ANIMATION */
-      @keyframes waste-flow {
-        0% { transform: translateX(-100%); opacity: 0; }
-        20% { opacity: 1; }
-        80% { opacity: 1; }
-        100% { transform: translateX(1000px); opacity: 0; }
-      }
-
-      /* FINALE POP */
-      @keyframes finale-pop {
-        0% { transform: scale(0) rotate(-45deg); opacity: 0; filter: blur(20px); }
-        70% { transform: scale(1.1) rotate(5deg); }
-        100% { transform: scale(1) rotate(0); opacity: 1; filter: blur(0); }
-      }
-
-      /* FADE IN UP ANIMATION */
-      @keyframes fadeInUp {
-        0% {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* UTILS */
-      .animate-spin-slow {
-        animation: spin 12s linear infinite;
-      }
-      @keyframes spin {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-      }
-
-      .rotateX-45 { transform: rotateX(45deg); }
-      .perspective-3000 { perspective: 3000px; }
-      .preserve-3d { transform-style: preserve-3d; }
-
-      /* SCROLLBAR HIDE */
-      ::-webkit-scrollbar {
-        display: none;
-      }
-
-      /* MOBILE OPTIMIZATIONS */
-      @media (max-width: 768px) {
         body {
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: white;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
         }
-
-        /* Disable text selection on mobile for better UX */
-        * {
-          -webkit-tap-highlight-color: transparent;
-          -webkit-touch-callout: none;
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
         }
-
-        /* Optimize 3D transforms for mobile */
-        .preserve-3d {
-          transform-style: flat;
+        .gradient-text {
+            background: linear-gradient(to right, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        /* Reduce blur effects on mobile for performance */
-        .backdrop-blur-3xl {
-          backdrop-filter: blur(8px);
+        .glow {
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.2);
         }
-      }
-
-      /* Touch device optimizations */
-      @media (hover: none) and (pointer: coarse) {
-        button:active {
-          transform: scale(0.95);
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
         }
-      }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .bg-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #1e3a8a 0%, transparent 70%);
+            opacity: 0.1;
+            z-index: -1;
+            animation: pulse 8s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.2); opacity: 0.15; }
+        }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "recharts": "https://esm.sh/recharts@^3.6.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
-    <div class="vignette"></div>
-  <script type="module" src="/index.tsx"></script>
+<body>
+
+    <section>
+        <div class="bg-pulse"></div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-center">A Campus That <br/><span class="text-blue-500">Never Sleeps</span></h1>
+        <p class="text-xl text-gray-400 max-w-2xl text-center reveal">Every campus looks calm on the surface. But behind the calm, energy is constantly flowing and situations are constantly changing.</p>
+        <div class="absolute bottom-10 animate-bounce text-gray-500">Scroll to begin</div>
+    </section>
+
+    <section class="bg-zinc-950">
+        <h2 class="text-4xl font-bold mb-8 reveal">The Invisible Complexity</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl">
+            <div class="p-6 border border-zinc-800 rounded-xl reveal">
+                <h3 class="text-blue-400 font-bold mb-2">Energy Waste</h3>
+                <p class="text-gray-400">Lights and AC running in empty rooms unnoticed.</p>
+            </div>
+            <div class="p-6 border border-zinc-800 rounded-xl reveal">
+                <h3 class="text-blue-400 font-bold mb-2">Crowd Risks</h3>
+                <p class="text-gray-400">Bottlenecks and incidents forming in blind spots.</p>
+            </div>
+            <div class="p-6 border border-zinc-800 rounded-xl reveal">
+                <h3 class="text-blue-400 font-bold mb-2">Siloed Data</h3>
+                <p class="text-gray-400">Systems exist, but they don't talk to each other.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="max-w-4xl text-center">
+            <h2 class="text-3xl md:text-5xl font-light italic text-gray-300 leading-relaxed reveal">
+                "Information exists... <br/>
+                <span class="font-bold text-white uppercase tracking-widest mt-4 block">Intelligence does not.</span>"
+            </h2>
+        </div>
+    </section>
+
+    <section class="bg-blue-950/20">
+        <div class="text-center space-y-6">
+            <h2 class="text-5xl font-bold reveal">What if the campus could <span class="gradient-text">think?</span></h2>
+            <p class="text-xl text-gray-400 reveal">What if it knew where energy was needed before a switch was flipped?</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="w-32 h-32 bg-blue-600 rounded-full blur-3xl absolute opacity-50"></div>
+        <h2 class="text-6xl font-bold mb-4 z-10">ORBIT <span class="text-blue-500">AI</span></h2>
+        <p class="text-2xl text-gray-300 z-10 reveal">Intelligence, Not Automation.</p>
+        <div class="mt-12 p-8 border-t border-blue-900/50 text-center max-w-xl reveal">
+            <p class="text-gray-400">A central brain that understands energy, space, and human activity—making decisions in real-time.</p>
+        </div>
+
+        <a href="/presentation.html" class="mt-10 px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full font-bold transition-all transform hover:scale-105 cursor-pointer inline-block no-underline">
+            SEE HOW IT WORKS
+        </a>
+    </section>
+
+    <script>
+        // Simple Intersection Observer for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe all reveal elements
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
 </body>
 </html>

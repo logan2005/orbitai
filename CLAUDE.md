@@ -6,6 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ORBIT AI - Campus Intelligence is a cinematic, section-based storytelling presentation built with React, TypeScript, and custom 3D CSS transforms. It showcases an AI-powered solar campus optimization system through an immersive, animated experience with 14 narrative sections.
 
+### Multi-Page Structure
+
+The application uses a **two-page architecture**:
+- **`index.html`**: Prelude landing page with 5 scroll-snap sections introducing the problem and value proposition. Final CTA button links to `/presentation.html`
+- **`presentation.html`**: Main React application with 14 interactive 3D sections
+
+When users visit the site, they first see the prelude, then click "SEE HOW IT WORKS" to enter the main presentation.
+
 ## Development Commands
 
 - `npm run dev` - Start development server on port 3000 (accessible at `http://localhost:3000`)
@@ -102,6 +110,7 @@ Left-side narrative panel features:
 - Path alias: `@/*` resolves to project root
 - Server runs on port 3000, host `0.0.0.0`
 - Environment variables injected at build time via `define`
+- Multi-page build config: `rollupOptions.input` includes both `index.html` and `presentation.html`
 
 **TypeScript config**:
 - Target ES2022
@@ -110,11 +119,13 @@ Left-side narrative panel features:
 - `experimentalDecorators` enabled
 - `noEmit: true` (Vite handles builds)
 
-**HTML setup** (`index.html`):
-- Tailwind CSS via CDN (not PostCSS)
-- Google Fonts: Inter (body) & Rajdhani (headings)
-- Import maps for React/Recharts/Lucide libraries (AI Studio compatibility)
-- Inline CSS for custom animations and 3D transform utilities
+**HTML setup**:
+- **`index.html`**: Static prelude page with Tailwind CSS via CDN, scroll-snap sections, and reveal animations
+- **`presentation.html`**: React app entry point with:
+  - Tailwind CSS via CDN (not PostCSS)
+  - Google Fonts: Inter (body) & Rajdhani (headings)
+  - Import maps for React/Recharts/Lucide libraries (AI Studio compatibility)
+  - Inline CSS for custom animations and 3D transform utilities
 
 ## Code Style
 
@@ -152,12 +163,13 @@ import Visualizer from './components/Visualizer';
 
 ```
 /
+├── index.html               # Prelude landing page (entry point)
+├── presentation.html        # Main React app HTML shell with fonts/CDN/animations
 ├── App.tsx                  # Main section orchestrator & navigation
 ├── index.tsx                # React root mount
-├── index.html               # HTML shell with fonts/CDN/animations
 ├── constants.tsx            # SECTIONS array + Lucide icon exports
 ├── types.ts                 # SectionData interface & enums
-├── vite.config.ts           # Build config
+├── vite.config.ts           # Build config (multi-page setup)
 ├── tsconfig.json            # TypeScript config
 ├── .env.local               # API keys (not committed)
 └── components/
