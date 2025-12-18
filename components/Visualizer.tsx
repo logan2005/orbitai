@@ -23,19 +23,20 @@ const Visualizer: React.FC<VisualizerProps> = ({ section }) => {
 
   // Determine label text based on current section
   const getLabelText = () => {
-    if (currentIndex === 0) return "Efficiency Leakage";
-    if (currentIndex === 1) return "Array Configuration";
-    if (currentIndex === 2) return "Solar Intelligence Active";
-    if (currentIndex === 3) return "Neural Core Initialization";
-    if (currentIndex === 4) return "Occupancy Matrix Identified";
-    if (currentIndex === 5) return "Logic-Based Load Management";
-    if (currentIndex === 6) return "System Audit Protocol";
-    if (currentIndex === 7) return "Active Monitoring Matrix";
-    if (currentIndex >= 8 && currentIndex <= 9) return "Vision Pipeline Detection";
-    if (currentIndex === 10) return "Hygiene AI Scan";
-    if (currentIndex === 11) return "Vision Pipeline Detection";
-    if (currentIndex === 12) return "Global State Synchronization";
-    if (currentIndex === 13) return "Orbit OS: Fully Integrated";
+    if (currentIndex === 0) return "Unseen Energy Loss";
+    if (currentIndex === 1) return "Solar Power Source";
+    if (currentIndex === 2) return "Live Solar Intelligence";
+    if (currentIndex === 3) return "AI Core Online";
+    if (currentIndex === 4) return "Campus Awareness Map";
+    if (currentIndex === 5) return "Smart Energy Control";
+    if (currentIndex === 6) return "System Activity Log";
+    if (currentIndex === 7) return "Live Campus View";
+    if (currentIndex === 8) return "Vision Processing Layer";
+    if (currentIndex === 9) return "Behavior Analysis";
+    if (currentIndex === 10) return "Hygiene Intelligence";
+    if (currentIndex === 11) return "Smart Alerts";
+    if (currentIndex === 12) return "System Harmony";
+    if (currentIndex === 13) return "ORBIT AI Campus OS";
     return "";
   };
 

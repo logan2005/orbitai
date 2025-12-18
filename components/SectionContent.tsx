@@ -53,6 +53,16 @@ const SectionContent: React.FC<SectionContentProps> = ({ section, isActive }) =>
             </p>
           </div>
 
+          {/* Visit Dashboard Button - Positioned High */}
+          {isFinale && (
+            <div className="w-full max-w-md">
+               <a href="https://orbitcampus.netlify.app" target="_blank" rel="noopener noreferrer" className="group relative w-full bg-cyan-500 text-black px-6 md:px-10 py-4 md:py-6 rounded-[20px] md:rounded-[30px] font-black transition-all duration-500 hover:bg-white hover:-translate-y-2 shadow-[0_25px_100px_rgba(6,182,212,0.4)] hover:shadow-[0_40px_120px_rgba(255,255,255,0.2)] flex items-center justify-center cursor-pointer no-underline">
+                  <span className="relative z-10 text-[10px] md:text-[14px] uppercase tracking-[0.3em] md:tracking-[0.5em] transition-colors duration-500">Visit Dashboard</span>
+                  <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-[20px] md:rounded-[30px]"></div>
+               </a>
+            </div>
+          )}
+
           {/* Strategic Metrics Section */}
           <div className="space-y-4 md:space-y-8 pt-4 md:pt-6 w-full max-w-md opacity-0 animate-[fadeInUp_0.6s_ease-out_0.5s_forwards]">
              <div className="flex items-center gap-3 md:gap-5">
@@ -71,14 +81,6 @@ const SectionContent: React.FC<SectionContentProps> = ({ section, isActive }) =>
              </div>
           </div>
 
-          {isFinale && (
-            <div className="pt-6 md:pt-12 w-full max-w-md opacity-0 animate-[fadeInUp_0.6s_ease-out_1s_forwards]">
-               <button className="group relative w-full bg-cyan-500 text-black px-6 md:px-10 py-4 md:py-7 rounded-[20px] md:rounded-[30px] font-black transition-all duration-500 hover:bg-white hover:-translate-y-2 shadow-[0_25px_100px_rgba(6,182,212,0.4)] hover:shadow-[0_40px_120px_rgba(255,255,255,0.2)]">
-                  <span className="relative z-10 text-[10px] md:text-[14px] uppercase tracking-[0.3em] md:tracking-[0.5em] transition-colors duration-500 group-hover:text-black">Initialize_Campus_OS</span>
-                  <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-[20px] md:rounded-[30px]"></div>
-               </button>
-            </div>
-          )}
        </div>
 
        {/* Footer Branding */}
