@@ -1,0 +1,409 @@
+================================================================================
+ORBIT AI - SMART CAMPUS PRESENTATION
+Slide Content & Visualization Breakdown
+================================================================================
+
+Total Slides: 14
+Presentation Flow: Problem → Solution → Features → Conclusion
+
+================================================================================
+
+SLIDE 1: The Efficiency Gap
+================================================================================
+Subtitle: Baseline Leakage
+Category: ENERGY_AI
+
+Description:
+Traditional campuses suffer from 'Dark Loads'—energy consumed by unoccupied
+spaces. Orbit AI identifies these leaks in real-time before they impact the
+bottom line.
+
+Visualization: problem-waste
+- Red energy waste flow animations showing inefficiency
+- Dark background representing wasted energy
+- Animated leak indicators
+
+Key Highlights:
+• Unoccupied Room Waste
+• Manual Switch Latency
+• Operational Entropy
+
+Visual Label: "Efficiency Leakage"
+
+================================================================================
+
+SLIDE 2: High-Yield Solar Array
+================================================================================
+Subtitle: Hardware Backbone
+Category: ENERGY_AI
+
+Description:
+Our high-efficiency photovoltaic modules are the primary feed for the Orbit
+Ecosystem, designed for 40kW+ peak performance in Indian campus conditions.
+
+Visualization: solar-install
+- 6x4 grid of solar panel modules
+- Blue-tinted photovoltaic cells
+- 3D perspective view with depth
+
+Key Highlights:
+• 42.5kW Peak Capacity
+• Anti-Soiling Coating
+• Zero-Battery Grid-Sync
+
+Visual Label: "Array Configuration"
+
+================================================================================
+
+SLIDE 3: Solar Intelligence
+================================================================================
+Subtitle: 42.5kW Active Yield
+Category: ENERGY_AI
+
+Description:
+Real-time generation tracking. The system is currently operating at 'OPTIMAL'
+status, processing raw DC into clean, prioritized campus power.
+
+Visualization: solar-intel
+- Same solar panel grid with active generation
+- Yellow pulse animations indicating energy production
+- Live telemetry panel showing "42.50 kW"
+- Green status indicator: "OPTIMAL_SYNC"
+
+Key Highlights:
+• Status: OPTIMAL
+• Prediction Model Active
+• Loss Mitigation Engaged
+
+Visual Label: "Solar Intelligence Active"
+
+================================================================================
+
+SLIDE 4: The Neural Core
+================================================================================
+Subtitle: Central Processing
+Category: ENERGY_AI → SECURITY_AI Transition
+
+Description:
+Orbit AI isn't just a dashboard; it's a decision engine. It cross-references
+energy generation with live occupancy to balance the campus grid.
+
+Visualization: orbit-core
+- Large cyan CPU icon in center
+- Pulsing circular borders (neural network visualization)
+- Centered layout (full screen focus)
+- Spinning animation representing processing
+
+Key Highlights:
+• Edge GPU Inference
+• Multi-Sensor Fusion
+• Real-time Logic Tuning
+
+Visual Label: "Neural Core Initialization"
+
+================================================================================
+
+SLIDE 5: Occupancy Matrix
+================================================================================
+Subtitle: Zone Detection
+Category: SECURITY_AI
+
+Description:
+The core shifts focus to the campus layout. Using vision-based situational
+awareness, it maps occupancy patterns in every wing simultaneously.
+
+Visualization: energy-matrix
+- 2x2 grid of room sectors (SECTOR_101, 102, 103, 104)
+- Neural core on left side (smaller)
+- Occupancy badges showing "OCCUPIED" or "VACANT"
+- User icons with cyan highlights
+- Connection lines from core to rooms
+
+Key Highlights:
+• Real-time Occupancy Check
+• Zone Heatmapping
+• Privacy-Preserved Data
+
+Visual Label: "Occupancy Matrix Identified"
+
+================================================================================
+
+SLIDE 6: Automated Shutdown
+================================================================================
+Subtitle: 124kWh Saved Today
+Category: SECURITY_AI
+
+Description:
+When rooms are confirmed empty, Orbit AI triggers an auto-shutdown of lighting
+and HVAC systems, preventing energy spillages at the source.
+
+Visualization: energy-matrix
+- Same room grid as Slide 5
+- Vacant rooms shown with red "POWER_ISOLATED" badges
+- Cut connection lines to shutdown rooms
+- Occupied rooms still have active cyan glow
+
+Key Highlights:
+• Autonomous Load Shedding
+• 2 Rooms Auto-Shutdown
+• Logic-Driven Savings
+
+Visual Label: "Logic-Based Load Management"
+
+================================================================================
+
+SLIDE 7: System Logs & Events
+================================================================================
+Subtitle: 12 Events Managed
+Category: SECURITY_AI
+
+Description:
+A comprehensive audit trail of every automated action. Transparency and
+accountability are built into the core of the Orbit OS.
+
+Visualization: system-logs
+- Room matrix shifted left
+- Large logs panel on right side
+- Scrolling event list with timestamps
+- "Neural_Event_Audit" header
+- Green "VERIFIED" badges on each log entry
+- Events like "AUTO_ISOLATE_R101" with timestamps
+
+Key Highlights:
+• 12 Recent Events
+• Last Event: 2m ago
+• Immutable Logic Logs
+
+Visual Label: "System Audit Protocol"
+
+================================================================================
+
+SLIDE 8: Student Monitoring
+================================================================================
+Subtitle: LIVE // 4 Zones Active
+Category: SECURITY_AI
+
+Description:
+Situation awareness across key campus sectors. We monitor flow and occupancy
+patterns to ensure student safety and resource availability.
+
+Visualization: student-monitor
+- Large 6x4 grid of campus zones (24 zones total)
+- Cyan-tinted active monitoring zones
+- 3D rotated perspective
+- Grid pattern background
+- Metrics panel showing "SYNCED" status
+
+Key Highlights:
+• Active Zone Tracking
+• Flow Rate Analysis
+• Zero-Identity Privacy
+
+Visual Label: "Active Monitoring Matrix"
+
+================================================================================
+
+SLIDE 9: Edge Vision Pipeline
+================================================================================
+Subtitle: 1 FPS Privacy Filter
+Category: SECURITY_AI
+
+Description:
+Data security is non-negotiable. Video is downsampled and processed locally.
+No identity is stored, only situational patterns.
+
+Visualization: cctv-scan
+- 3 camera icons at top (white rounded squares)
+- Cyan light beams projecting downward
+- Campus zone grid below
+- Privacy-focused visualization
+
+Key Highlights:
+• On-Premise Inference
+• Identity Masking
+• Bandwidth Minimalist
+
+Visual Label: "Vision Pipeline Detection"
+
+================================================================================
+
+SLIDE 10: Behavioral Analysis
+================================================================================
+Subtitle: YOLO Anomaly Detection
+Category: SECURITY_AI
+
+Description:
+The AI recognizes 'situations'—crowds, loitering, or restricted access—without
+ever needing to know 'who' is in the frame.
+
+Visualization: ai-think
+- Same camera + grid setup
+- Enhanced zone highlighting
+- AI processing indicators
+- Anomaly detection overlays
+
+Key Highlights:
+• Contextual Detection
+• No Face Recognition
+• Anonymized Silhouettes
+
+Visual Label: "Vision Pipeline Detection"
+
+================================================================================
+
+SLIDE 11: Hygiene AI
+================================================================================
+Subtitle: 98% Cleanliness Score
+Category: SECURITY_AI
+
+Description:
+Automated facility auditing. The AI detects litter and spillages, maintaining
+campus hygiene standards with relentless precision.
+
+Visualization: hygiene-ai
+- Green-tinted zone grid (cleanliness theme)
+- Animated green scan line moving down
+- Metrics panel showing "98%" score
+- "CLEANLINESS_LOCK" status
+- Progress bar at 98%
+- "SCAN_INTERVAL: 15m" indicator
+
+Key Highlights:
+• Status: CLEAN
+• Next Scan: 20m
+• Auto-Janitor Dispatch
+
+Visual Label: "Hygiene AI Scan"
+
+================================================================================
+
+SLIDE 12: Rapid Dispatch
+================================================================================
+Subtitle: Proactive Intercept
+Category: SECURITY_AI
+
+Description:
+Alerts are sent directly to staff mobile units. Seconds matter in safety and
+maintenance; Orbit AI ensures zero delay in response.
+
+Visualization: alert-pulse
+- Zone grid with alert indicators
+- Red threat zone highlighting (zone 13)
+- Pulsing alert animations
+- Staff dispatch visualization
+
+Key Highlights:
+• Direct Staff Push
+• Zone GPS Tagging
+• Verified Incident Resolve
+
+Visual Label: "Vision Pipeline Detection"
+
+================================================================================
+
+SLIDE 13: Operational Balance
+================================================================================
+Subtitle: Steady State OS
+Category: CONCLUSION
+
+Description:
+A campus that runs itself. From energy to security to hygiene, Orbit AI
+maintains a perfect operational equilibrium.
+
+Visualization: resolution
+- Large panel with system equilibrium dashboard
+- Shield icon representing security
+- "Enterprise_Command" header
+- 3 node clusters (NODE_CLUSTER_01, 02, 03)
+- Green validation indicators
+- "System_Equilibrium" title
+
+Key Highlights:
+• Site Status: SECURE
+• Logic Drift Correction
+• Continuous Optimization
+
+Visual Label: "Global State Synchronization"
+
+================================================================================
+
+SLIDE 14: ORBIT AI: Campus OS
+================================================================================
+Subtitle: Intelligence Unlocked
+Category: CONCLUSION / FINALE
+
+Description:
+The definitive platform for the smart Indian campus. Sustainable energy meets
+situational safety in one unified, edge-processed ecosystem.
+
+Visualization: unified
+- Massive white "O" logo with cyan border
+- Orbital ring animations
+- Full-screen finale reveal
+- Shadow glow effect (600px cyan)
+- Spinning orbital rings
+
+Key Highlights:
+• Integrated Dashboard
+• Scalable Architecture
+• Future-Ready Campus
+
+Visual Label: "Orbit OS: Fully Integrated"
+
+Special Feature: "Initialize_Campus_OS" CTA button
+
+================================================================================
+
+VISUALIZATION TYPES SUMMARY
+================================================================================
+
+Energy/Solar Visualizations (Slides 1-3):
+- problem-waste: Red flow animations showing energy waste
+- solar-install: Static solar panel grid
+- solar-intel: Active solar panel grid with generation metrics
+
+Core Processing (Slide 4):
+- orbit-core: Central neural processing unit visualization
+
+Energy Management (Slides 5-7):
+- energy-matrix: Room occupancy and power management grid
+- system-logs: Event audit trail panel
+
+Security & Monitoring (Slides 8-12):
+- student-monitor: Campus zone monitoring grid
+- cctv-scan: Camera surveillance visualization
+- ai-think: AI processing and anomaly detection
+- hygiene-ai: Cleanliness scanning system
+- alert-pulse: Alert and dispatch system
+
+Conclusion (Slides 13-14):
+- resolution: System equilibrium dashboard
+- unified: Finale "O" logo reveal
+
+================================================================================
+
+ANIMATION & TRANSITION NOTES
+================================================================================
+
+3D Scene Chapters:
+- Chapter 1 (Slides 0-2): Energy & Solar scenes
+- Chapter 2 (Slides 3-6): Neural core & Matrix scenes
+- Chapter 3 (Slides 7-11): Security & Monitoring scenes
+- Chapter 4 (Slides 12-13): Resolution & Finale scenes
+
+Text Animations (Left Panel):
+- Progress header: 0.1s delay
+- Title section: 0.3s delay
+- Highlights header: 0.5s delay
+- Individual bullets: 0.7s + staggered by 0.1s
+- CTA button: 1.0s delay
+
+Scene Transitions:
+- Duration: 2000ms
+- Easing: cubic-bezier(0.16, 1, 0.3, 1)
+- 3D orbital rotation between scenes
+- Z-depth travel: 5000px per chapter
+
+================================================================================
+END OF DOCUMENT
+================================================================================
