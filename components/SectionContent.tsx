@@ -61,7 +61,7 @@ const SectionContent: React.FC<SectionContentProps> = ({ section, isActive }) =>
                   <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-[20px] md:rounded-[30px]"></div>
                </a>
                <a href="/roi.html" className="group relative w-full bg-white/5 border-2 border-cyan-500/40 text-white px-6 md:px-10 py-3 md:py-5 rounded-[20px] md:rounded-[30px] font-black transition-all duration-500 hover:bg-cyan-500/10 hover:border-cyan-500 hover:-translate-y-2 shadow-[0_15px_60px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_80px_rgba(6,182,212,0.2)] flex items-center justify-center cursor-pointer no-underline">
-                  <span className="relative z-10 text-[9px] md:text-[12px] uppercase tracking-[0.3em] md:tracking-[0.5em] transition-colors duration-500">View ROI & Financial Model</span>
+                  <span className="relative z-10 text-[9px] md:text-[12px] uppercase tracking-[0.3em] md:tracking-[0.5em] transition-colors duration-500">View Savings & Financial Analysis</span>
                </a>
             </div>
           )}

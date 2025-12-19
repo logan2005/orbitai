@@ -14,9 +14,9 @@ export const SECTIONS: SectionData[] = [
   },
   {
     id: 'scene-2',
-    title: "Harnessing the Sun",
+    title: "Harnessing Renewable Energy",
     subtitle: "Clean Energy Begins Here",
-    description: "Solar panels come into view as a natural solution — capturing abundant sunlight and converting it into usable power. This is the foundation of a smarter, cleaner infrastructure ecosystem.",
+    description: "Renewable energy systems come into view as a natural solution — capturing clean power and converting it into usable electricity. This is the foundation of a smarter, cleaner infrastructure ecosystem.",
     visualType: 'solar-install',
     highlights: ["Renewable energy source", "Designed for infrastructure scale", "Grid-connected efficiency"],
     layout: 'left'
@@ -24,10 +24,10 @@ export const SECTIONS: SectionData[] = [
   {
     id: 'scene-3',
     title: "Energy Comes Alive",
-    subtitle: "Real-Time Power Generation",
-    description: "Energy is no longer static. ORBIT AI continuously tracks how much power is being generated, how stable it is, and how it can be best used — moment by moment.",
+    subtitle: "Real-Time Power Intelligence",
+    description: "Energy is no longer static. ORBIT AI continuously tracks how much power is being generated, consumption patterns, and optimization opportunities — moment by moment.",
     visualType: 'solar-intel',
-    highlights: ["Live energy monitoring", "Predictive yield awareness", "Stable power output"],
+    highlights: ["Live energy monitoring", "Predictive consumption analysis", "Stable power optimization"],
     layout: 'left'
   },
   {
