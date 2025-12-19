@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(npm run dev:*)",
-      "Bash(ren:*)"
+      "Bash(ren:*)",
+      "Bash(ls:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd multi-page setup with prelude landing page\n\n- Added presentation.html for React app\n- index.html now serves as prelude with 5 scroll sections\n- Updated vite.config.ts for multi-page build\n- Updated CLAUDE.md documentation\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)"
     ]
   }
 }

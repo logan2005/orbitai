@@ -23,7 +23,8 @@ export default defineConfig(({ mode }) => {
         rollupOptions: {
           input: {
             main: path.resolve(__dirname, 'index.html'),
-            presentation: path.resolve(__dirname, 'presentation.html')
+            presentation: path.resolve(__dirname, 'presentation.html'),
+            roi: path.resolve(__dirname, 'roi.html')
           }
         }
       }

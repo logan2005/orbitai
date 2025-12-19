@@ -8,11 +8,16 @@ ORBIT AI - Campus Intelligence is a cinematic, section-based storytelling presen
 
 ### Multi-Page Structure
 
-The application uses a **two-page architecture**:
+The application uses a **three-page architecture**:
 - **`index.html`**: Prelude landing page with 5 scroll-snap sections introducing the problem and value proposition. Final CTA button links to `/presentation.html`
-- **`presentation.html`**: Main React application with 14 interactive 3D sections
+- **`presentation.html`**: Main React application with 14 interactive 3D sections. Finale slide includes buttons to visit the dashboard and view the ROI page
+- **`roi.html`**: Professional ROI & financial model page with detailed metrics, comparisons, ESG impact, and investment rationale
 
-When users visit the site, they first see the prelude, then click "SEE HOW IT WORKS" to enter the main presentation.
+**Navigation flow:**
+1. Users land on the prelude page (index.html)
+2. Click "SEE HOW IT WORKS" to view the main presentation
+3. At the finale slide, they can either visit the live dashboard or view the detailed ROI page
+4. ROI page includes a "Back to Presentation" button in the top-left corner
 
 ## Development Commands
 
@@ -165,6 +170,7 @@ import Visualizer from './components/Visualizer';
 /
 ├── index.html               # Prelude landing page (entry point)
 ├── presentation.html        # Main React app HTML shell with fonts/CDN/animations
+├── roi.html                 # Professional ROI & financial model page
 ├── App.tsx                  # Main section orchestrator & navigation
 ├── index.tsx                # React root mount
 ├── constants.tsx            # SECTIONS array + Lucide icon exports
@@ -174,7 +180,7 @@ import Visualizer from './components/Visualizer';
 ├── .env.local               # API keys (not committed)
 └── components/
     ├── Visualizer.tsx       # 3D scene renderer with 4 chapter scenes
-    ├── SectionContent.tsx   # Left narrative overlay panel
+    ├── SectionContent.tsx   # Left narrative overlay panel (includes finale buttons)
     └── Navigation.tsx       # Right-side dot navigation
 ```
 

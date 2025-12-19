@@ -70,7 +70,7 @@ const Visualizer: React.FC<VisualizerProps> = ({ section }) => {
 
           {/* SCENE 4: FINALE RESOLUTION */}
           <SceneWrapper z={-chapterGap * 3} active={groupIndex === 3}>
-             <ResponseScene subStep={currentIndex} />
+             <ResponseScene subStep={subProgression} currentIndex={currentIndex} />
           </SceneWrapper>
         </div>
       </div>
@@ -343,12 +343,12 @@ const SecurityScene = ({ subStep }: { subStep: number }) => {
   );
 };
 
-const ResponseScene = ({ subStep }: { subStep: number }) => {
-  const isFinale = subStep === 13;
+const ResponseScene = ({ subStep, currentIndex }: { subStep: number; currentIndex: number }) => {
+  const isFinale = currentIndex === 13; // scene-14 is at index 13
 
   return (
     <div className="relative w-[85vw] max-w-[900px] h-[65vh] max-h-[700px] flex items-center justify-center gap-8 md:gap-32">
-       <div className={`w-full max-w-[600px] h-full max-h-[600px] bg-slate-950 border-2 md:border-4 border-slate-800 rounded-[40px] md:rounded-[80px] p-6 md:p-12 transition-all duration-[2000ms] flex flex-col justify-between ${isFinale ? 'scale-75 opacity-0 blur-3xl' : 'scale-100 opacity-100 shadow-[0_70px_200px_rgba(0,0,0,1)]'}`}>
+       <div className={`w-full max-w-[600px] h-full max-h-[600px] bg-slate-950 border-2 md:border-4 border-slate-800 rounded-[40px] md:rounded-[80px] p-6 md:p-12 transition-all duration-[2000ms] flex flex-col justify-between ${isFinale ? 'scale-75 opacity-0 blur-3xl pointer-events-none' : 'scale-100 opacity-100 shadow-[0_70px_200px_rgba(0,0,0,1)]'}`}>
           <div className="flex items-center gap-3 md:gap-6 mb-4 md:mb-8">
              <div className="w-10 h-10 md:w-16 md:h-16 bg-cyan-400/20 rounded-[15px] md:rounded-[25px] flex items-center justify-center border-2 border-cyan-400/60 shadow-[0_0_40px_rgba(34,211,238,0.3)]">
                 <ICONS.Shield className="w-5 h-5 md:w-8 md:h-8 text-cyan-400" />
