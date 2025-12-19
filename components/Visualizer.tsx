@@ -27,16 +27,16 @@ const Visualizer: React.FC<VisualizerProps> = ({ section }) => {
     if (currentIndex === 1) return "Solar Power Source";
     if (currentIndex === 2) return "Live Solar Intelligence";
     if (currentIndex === 3) return "AI Core Online";
-    if (currentIndex === 4) return "Campus Awareness Map";
+    if (currentIndex === 4) return "Infrastructure Awareness Map";
     if (currentIndex === 5) return "Smart Energy Control";
     if (currentIndex === 6) return "System Activity Log";
-    if (currentIndex === 7) return "Live Campus View";
+    if (currentIndex === 7) return "Live Facility View";
     if (currentIndex === 8) return "Vision Processing Layer";
     if (currentIndex === 9) return "Behavior Analysis";
     if (currentIndex === 10) return "Hygiene Intelligence";
     if (currentIndex === 11) return "Smart Alerts";
     if (currentIndex === 12) return "System Harmony";
-    if (currentIndex === 13) return "ORBIT AI Campus OS";
+    if (currentIndex === 13) return "ORBIT AI Infrastructure OS";
     return "";
   };
 

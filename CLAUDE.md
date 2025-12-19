@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-ORBIT AI - Campus Intelligence is a cinematic, section-based storytelling presentation built with React, TypeScript, and custom 3D CSS transforms. It showcases an AI-powered solar campus optimization system through an immersive, animated experience with 14 narrative sections.
+ORBIT AI - Infrastructure Intelligence is a cinematic, section-based storytelling presentation built with React, TypeScript, and custom 3D CSS transforms. It showcases an AI-powered solar infrastructure optimization system through an immersive, animated experience with 14 narrative sections.
 
 ### Multi-Page Structure
 
