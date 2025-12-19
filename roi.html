@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBIT AI | ROI & Financial Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #22d3ee;
+            --primary-dark: #0891b2;
+            --secondary: #06b6d4;
+            --accent: #f97316;
+            --dark: #000408;
+            --dark-light: #0f172a;
+            --gray: #64748b;
+            --light: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 1000;
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(20px);
+        }
+
+        .back-button:hover {
+            background: rgba(34, 211, 238, 0.2);
+            transform: translateX(-5px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 4rem 2rem;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(34,211,238,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(6,182,212,0.1) 0%, transparent 50%);
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(34,211,238,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(34,211,238,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(34,211,238,0.1);
+            border: 1px solid rgba(34,211,238,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.6s ease;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            animation: fadeInUp 0.6s ease 0.1s both;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2.5rem;
+            max-width: 540px;
+            line-height: 1.8;
+            animation: fadeInUp 0.6s ease 0.2s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.6s ease 0.3s both;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.25rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 0.6s ease 0.4s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--dark);
+            box-shadow: 0 4px 20px rgba(34,211,238,0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(34,211,238,0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.05);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInRight 0.8s ease 0.3s both;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(34,211,238,0.2);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+        }
+
+        .hero-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .hero-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .hero-card-badge {
+            background: rgba(34,211,238,0.15);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .energy-chart {
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            padding: 0 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-bar {
+            flex: 1;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            transition: all 0.5s ease;
+            min-height: 20px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            box-shadow: 0 0 20px rgba(34,211,238,0.3);
+        }
+
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        /* Floating Cards */
+        .floating-card {
+            position: absolute;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(34,211,238,0.2);
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .floating-card.card-1 {
+            top: -20px;
+            right: -30px;
+            animation-delay: 0s;
+        }
+
+        .floating-card.card-2 {
+            bottom: 60px;
+            left: -40px;
+            animation-delay: 1s;
+        }
+
+        .floating-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            background: rgba(34,211,238,0.2);
+            color: var(--primary);
+        }
+
+        .floating-value {
+            font-weight: 700;
+            color: var(--white);
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .floating-label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(34,211,238,0.1);
+            border: 1px solid rgba(34,211,238,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .problem-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .problem-list {
+            list-style: none;
+        }
+
+        .problem-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(249,115,22,0.05);
+            border: 1px solid rgba(249,115,22,0.15);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .problem-item:hover {
+            background: rgba(249,115,22,0.1);
+            transform: translateX(5px);
+        }
+
+        .problem-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(249,115,22,0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .problem-text h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .problem-text p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .problem-visual {
+            position: relative;
+        }
+
+        .waste-indicator {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .waste-chart {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 2rem;
+        }
+
+        .waste-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--primary) 0deg 216deg,
+                var(--accent) 216deg 360deg
+            );
+            position: relative;
+            box-shadow: 0 0 40px rgba(34,211,238,0.2);
+        }
+
+        .waste-circle::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            bottom: 30px;
+            background: var(--dark-light);
+            border-radius: 50%;
+        }
+
+        .waste-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .waste-percent {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .waste-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .waste-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        .waste-stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .waste-stat-value.good {
+            color: var(--primary);
+        }
+
+        .waste-stat-value.bad {
+            color: var(--accent);
+        }
+
+        .waste-stat-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: var(--dark);
+        }
+
+        .solution-visual-main {
+            background: rgba(34,211,238,0.03);
+            border: 1px solid rgba(34,211,238,0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .solution-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .flow-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 30px rgba(34,211,238,0.3);
+        }
+
+        .flow-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .flow-desc {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .flow-arrow {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(34,211,238,0.3);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(34,211,238,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .comparison-card {
+            background: rgba(255,255,255,0.02);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-card.before {
+            border: 1px solid rgba(249,115,22,0.2);
+        }
+
+        .comparison-card.after {
+            border: 1px solid rgba(34,211,238,0.3);
+            box-shadow: 0 0 60px rgba(34,211,238,0.1);
+        }
+
+        .comparison-card.after::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .comparison-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .comparison-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .comparison-icon.before {
+            background: rgba(249,115,22,0.15);
+            color: var(--accent);
+        }
+
+        .comparison-icon.after {
+            background: rgba(34,211,238,0.15);
+            color: var(--primary);
+        }
+
+        .comparison-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .comparison-subtitle {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .comparison-metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+        }
+
+        .metric-label {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .metric-value {
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .metric-value.negative {
+            color: var(--accent);
+        }
+
+        .metric-value.positive {
+            color: var(--primary);
+        }
+
+        .comparison-total {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .total-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .total-value {
+            font-size: 2.25rem;
+            font-weight: 800;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .total-value.before {
+            color: var(--accent);
+        }
+
+        .total-value.after {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .comparison-vs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vs-circle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 800;
+            box-shadow: 0 0 30px rgba(34,211,238,0.4);
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            background: var(--dark);
+        }
+
+        .impact-hero {
+            background: linear-gradient(135deg, rgba(34,211,238,0.1) 0%, rgba(6,182,212,0.1) 100%);
+            border: 1px solid rgba(34,211,238,0.2);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .impact-main-stat {
+            margin-bottom: 2rem;
+        }
+
+        .impact-value {
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .impact-label {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 0.5rem;
+        }
+
+        .impact-breakdown {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .breakdown-item {
+            text-align: center;
+        }
+
+        .breakdown-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .breakdown-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .impact-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(34,211,238,0.3);
+        }
+
+        .impact-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+        }
+
+        .impact-icon.savings {
+            background: linear-gradient(135deg, rgba(34,211,238,0.2), rgba(34,211,238,0.05));
+            color: var(--primary);
+        }
+
+        .impact-icon.payback {
+            background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(6,182,212,0.05));
+            color: var(--secondary);
+        }
+
+        .impact-icon.carbon {
+            background: linear-gradient(135deg, rgba(46,204,113,0.2), rgba(46,204,113,0.05));
+            color: #2ECC71;
+        }
+
+        .impact-card-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .impact-card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .impact-card-desc {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ROI Section */
+        .roi-section {
+            background: linear-gradient(180deg, var(--dark-light) 0%, var(--dark) 100%);
+        }
+
+        .roi-table-container {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .roi-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .roi-table thead {
+            background: rgba(34,211,238,0.1);
+        }
+
+        .roi-table th {
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .roi-table td {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 1rem;
+        }
+
+        .roi-table tbody tr:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .roi-table .highlight-row {
+            background: rgba(34,211,238,0.08);
+        }
+
+        .roi-table .highlight-row td {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .roi-visual {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .roi-chart-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .roi-chart-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .roi-chart-title i {
+            color: var(--primary);
+        }
+
+        .payback-visual {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-end;
+            height: 180px;
+            padding: 1rem 0;
+        }
+
+        .payback-bar {
+            flex: 1;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 1rem;
+            position: relative;
+        }
+
+        .payback-bar.without {
+            height: 85%;
+            background: linear-gradient(180deg, rgba(249,115,22,0.6), rgba(249,115,22,0.2));
+        }
+
+        .payback-bar.with {
+            height: 65%;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            box-shadow: 0 0 30px rgba(34,211,238,0.3);
+        }
+
+        .payback-years {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .payback-label {
+            position: absolute;
+            bottom: -35px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            white-space: nowrap;
+        }
+
+        .consumption-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .consumption-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .consumption-label {
+            width: 80px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .consumption-bar-container {
+            flex: 1;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .consumption-bar {
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            font-weight: 600;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .consumption-bar.before {
+            width: 60%;
+            background: linear-gradient(90deg, rgba(249,115,22,0.6), rgba(249,115,22,0.3));
+        }
+
+        .consumption-bar.after {
+            width: 90%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        /* ESG Section */
+        .esg-section {
+            background: var(--dark);
+        }
+
+        .esg-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .esg-main {
+            background: linear-gradient(135deg, rgba(46,204,113,0.1), rgba(34,211,238,0.05));
+            border: 1px solid rgba(46,204,113,0.2);
+            border-radius: 24px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .carbon-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(46,204,113,0.15);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #2ECC71;
+            margin-bottom: 1.5rem;
+        }
+
+        .carbon-value {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #2ECC71;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .carbon-unit {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .carbon-desc {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+        }
+
+        .esg-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .esg-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .esg-card:hover {
+            background: rgba(255,255,255,0.04);
+            transform: translateX(5px);
+        }
+
+        .esg-letter {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .esg-letter.e {
+            background: rgba(46,204,113,0.15);
+            color: #2ECC71;
+        }
+
+        .esg-letter.s {
+            background: rgba(52,152,219,0.15);
+            color: #3498DB;
+        }
+
+        .esg-letter.g {
+            background: rgba(155,89,182,0.15);
+            color: #9B59B6;
+        }
+
+        .esg-content h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .esg-points {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .esg-points li {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            background: rgba(255,255,255,0.05);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        /* Investment Section */
+        .investment-section {
+            background: linear-gradient(180deg, var(--dark) 0%, #0D1F3C 100%);
+        }
+
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .investment-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .investment-card:hover {
+            border-color: rgba(34,211,238,0.3);
+            transform: translateY(-5px);
+        }
+
+        .investment-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.25rem;
+            background: rgba(34,211,238,0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .investment-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .investment-desc {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);
+        }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+            letter-spacing: -1px;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-text {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-subtitle {
+                margin: 0 auto 2.5rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .floating-card.card-1 {
+                right: 0;
+            }
+
+            .floating-card.card-2 {
+                left: 0;
+            }
+
+            .comparison-container {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-vs {
+                padding: 1rem 0;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .problem-grid,
+            .esg-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-features,
+            .impact-grid,
+            .investment-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .roi-visual {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .solution-flow {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .solution-features,
+            .impact-grid,
+            .investment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-breakdown {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .floating-card {
+                display: none;
+            }
+
+            .roi-table {
+                font-size: 0.85rem;
+            }
+
+            .roi-table th,
+            .roi-table td {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="/presentation.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        Back to Presentation
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-bolt"></i>
+                    Professional Analysis
+                </div>
+                <h1 class="hero-title">
+                    Maximize Solar ROI with <span class="highlight">Intelligent Energy Optimization</span>
+                </h1>
+                <p class="hero-subtitle">
+                    ORBIT AI enhances economic performance of on-grid solar installations by increasing direct solar self-consumption—without battery storage or additional capacity.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">40%</div>
+                        <div class="hero-stat-label">Cost Reduction</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">₹60K</div>
+                        <div class="hero-stat-label">Annual Savings</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">1 Year</div>
+                        <div class="hero-stat-label">Faster Payback</div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#impact" class="btn btn-primary">
+                        <i class="fas fa-chart-line"></i>
+                        View Financial Model
+                    </a>
+                    <a href="#solution" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        How It Works
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <span class="hero-card-title">Energy Optimization</span>
+                        <span class="hero-card-badge">Live</span>
+                    </div>
+                    <div class="energy-chart">
+                        <div class="chart-bar" style="height: 45%"></div>
+                        <div class="chart-bar" style="height: 65%"></div>
+                        <div class="chart-bar" style="height: 90%"></div>
+                        <div class="chart-bar" style="height: 95%"></div>
+                        <div class="chart-bar" style="height: 88%"></div>
+                        <div class="chart-bar" style="height: 70%"></div>
+                        <div class="chart-bar" style="height: 50%"></div>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <div class="legend-dot"></div>
+                            <span>Solar Generation</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: var(--secondary)"></div>
+                            <span>Optimized Usage</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-card card-1">
+                    <div class="floating-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="floating-text">
+                        <div class="floating-value">14.7 tons</div>
+                        <div class="floating-label">CO₂ Reduced/Year</div>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="floating-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="floating-text">
+                        <div class="floating-value">90%</div>
+                        <div class="floating-label">Self-Consumption</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section" id="problem">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    The Challenge
+                </div>
+                <h2 class="section-title">The Hidden Inefficiency of On-Grid Solar</h2>
+                <p class="section-subtitle">
+                    Most solar installations waste significant value due to poor alignment between generation and consumption.
+                </p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-content">
+                    <h3>Why 40% of Solar Value is Lost</h3>
+                    <ul class="problem-list">
+                        <li class="problem-item">
+                            <div class="problem-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="problem-text">
+                                <h4>Timing Mismatch</h4>
+                                <p>Peak solar generation doesn't align with campus energy demand patterns</p>
+                            </div>
+                        </li>
+                        <li class="problem-item">
+                            <div class="problem-icon">
+                                <i class="fas fa-arrow-right-arrow-left"></i>
+                            </div>
+                            <div class="problem-text">
+                                <h4>Low Export Value</h4>
+                                <p>Grid export remuneration is only 50% of purchase cost (₹10 vs ₹20/unit)</p>
+                            </div>
+                        </li>
+                        <li class="problem-item">
+                            <div class="problem-icon">
+                                <i class="fas fa-ban"></i>
+                            </div>
+                            <div class="problem-text">
+                                <h4>No Load Intelligence</h4>
+                                <p>Conventional systems lack predictive load orchestration capabilities</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="problem-visual">
+                    <div class="waste-indicator">
+                        <div class="waste-chart">
+                            <div class="waste-circle"></div>
+                            <div class="waste-center">
+                                <div class="waste-percent">40%</div>
+                                <div class="waste-label">Value Lost</div>
+                            </div>
+                        </div>
+                        <div class="waste-stats">
+                            <div class="waste-stat">
+                                <div class="waste-stat-value good">60%</div>
+                                <div class="waste-stat-label">Self-Consumed</div>
+                            </div>
+                            <div class="waste-stat">
+                                <div class="waste-stat-value bad">40%</div>
+                                <div class="waste-stat-label">Exported at Loss</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section" id="solution">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fas fa-lightbulb"></i>
+                    Our Solution
+                </div>
+                <h2 class="section-title">Intelligent Solar Optimization</h2>
+                <p class="section-subtitle">
+                    Predictive intelligence and load orchestration to maximize solar self-consumption.
+                </p>
+            </div>
+            <div class="solution-visual-main">
+                <div class="solution-flow">
+                    <div class="flow-step">
+                        <div class="flow-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="flow-title">Solar Prediction</div>
+                        <div class="flow-desc">AI forecasts short-term solar availability</div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step">
+                        <div class="flow-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="flow-title">Smart Analysis</div>
+                        <div class="flow-desc">Identifies flexible load opportunities</div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step">
+                        <div class="flow-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <div class="flow-title">Load Orchestration</div>
+                        <div class="flow-desc">Aligns demand with generation</div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step">
+                        <div class="flow-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="flow-title">Maximum ROI</div>
+                        <div class="flow-desc">90% self-consumption achieved</div>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="feature-title">Water Pumping</div>
+                    <div class="feature-desc">Schedule pumping during peak solar hours</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="feature-title">HVAC Pre-Cooling</div>
+                    <div class="feature-desc">Pre-cool spaces when solar is abundant</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="feature-title">Laboratory Usage</div>
+                    <div class="feature-desc">Optimize high-power equipment timing</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <div class="feature-title">Non-Critical Systems</div>
+                    <div class="feature-desc">Shift flexible loads automatically</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fas fa-balance-scale"></i>
+                    Before vs After
+                </div>
+                <h2 class="section-title">The ORBIT AI Difference</h2>
+                <p class="section-subtitle">
+                    See the transformative impact on your solar investment.
+                </p>
+            </div>
+            <div class="comparison-container">
+                <div class="comparison-card before">
+                    <div class="comparison-header">
+                        <div class="comparison-icon before">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <div>
+                            <div class="comparison-title">Without ORBIT AI</div>
+                            <div class="comparison-subtitle">Standard on-grid solar</div>
+                        </div>
+                    </div>
+                    <div class="comparison-metrics">
+                        <div class="metric-row">
+                            <span class="metric-label">Self-Consumption</span>
+                            <span class="metric-value negative">~60%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Grid Export</span>
+                            <span class="metric-value negative">~40%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Self-Consumed Value</span>
+                            <span class="metric-value">₹2,40,000</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Export Value</span>
+                            <span class="metric-value negative">₹80,000</span>
+                        </div>
+                    </div>
+                    <div class="comparison-total">
+                        <div class="total-label">Annual Benefit</div>
+                        <div class="total-value before">₹3.20 Lakhs</div>
+                    </div>
+                </div>
+                <div class="comparison-vs">
+                    <div class="vs-circle">VS</div>
+                </div>
+                <div class="comparison-card after">
+                    <div class="comparison-header">
+                        <div class="comparison-icon after">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <div class="comparison-title">With ORBIT AI</div>
+                            <div class="comparison-subtitle">Intelligent optimization</div>
+                        </div>
+                    </div>
+                    <div class="comparison-metrics">
+                        <div class="metric-row">
+                            <span class="metric-label">Self-Consumption</span>
+                            <span class="metric-value positive">~90%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Grid Export</span>
+                            <span class="metric-value positive">~10%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Self-Consumed Value</span>
+                            <span class="metric-value">₹3,60,000</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Export Value</span>
+                            <span class="metric-value">₹20,000</span>
+                        </div>
+                    </div>
+                    <div class="comparison-total">
+                        <div class="total-label">Annual Benefit</div>
+                        <div class="total-value after">₹3.80 Lakhs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section" id="impact">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fas fa-rocket"></i>
+                    Financial Impact
+                </div>
+                <h2 class="section-title">Measurable Results</h2>
+                <p class="section-subtitle">
+                    Quantifiable improvements to your solar investment performance.
+                </p>
+            </div>
+            <div class="impact-hero">
+                <div class="impact-main-stat">
+                    <div class="impact-value">₹60,000</div>
+                    <div class="impact-label">Additional Annual Savings</div>
+                </div>
+                <div class="impact-breakdown">
+                    <div class="breakdown-item">
+                        <div class="breakdown-value">18,000</div>
+                        <div class="breakdown-label">Units Self-Consumed</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-value">36%</div>
+                        <div class="breakdown-label">Grid Offset Achieved</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-value">Zero</div>
+                        <div class="breakdown-label">Additional CAPEX</div>
+                    </div>
+                </div>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon savings">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <div class="impact-card-value" style="color: var(--primary)">40%</div>
+                    <div class="impact-card-title">Electricity Cost Reduction</div>
+                    <div class="impact-card-desc">Significant reduction in annual electricity expenditure</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon payback">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="impact-card-value" style="color: var(--secondary)">~3.2 Years</div>
+                    <div class="impact-card-title">Accelerated Payback</div>
+                    <div class="impact-card-desc">One year faster than conventional installations</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon carbon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="impact-card-value" style="color: #2ECC71">14.7 tons</div>
+                    <div class="impact-card-title">CO₂ Reduction</div>
+                    <div class="impact-card-desc">Annual carbon emission reduction per installation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="roi-section" id="roi">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fas fa-calculator"></i>
+                    Financial Model
+                </div>
+                <h2 class="section-title">Detailed ROI Analysis</h2>
+                <p class="section-subtitle">
+                    Based on a standard 12 kW on-grid solar installation for educational campuses.
+                </p>
+            </div>
+            <div class="roi-table-container">
+                <table class="roi-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Without Optimization</th>
+                            <th>With ORBIT AI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Solar Capacity</td>
+                            <td>12 kW (On-Grid)</td>
+                            <td>12 kW (On-Grid)</td>
+                        </tr>
+                        <tr>
+                            <td>Annual Generation</td>
+                            <td>20,000 units</td>
+                            <td>20,000 units</td>
+                        </tr>
+                        <tr>
+                            <td>Self-Consumption Rate</td>
+                            <td>~60% (12,000 units)</td>
+                            <td>~90% (18,000 units)</td>
+                        </tr>
+                        <tr>
+                            <td>Grid Export</td>
+                            <td>~40% (8,000 units)</td>
+                            <td>~10% (2,000 units)</td>
+                        </tr>
+                        <tr>
+                            <td>Value of Self-Consumed</td>
+                            <td>₹2,40,000</td>
+                            <td>₹3,60,000</td>
+                        </tr>
+                        <tr>
+                            <td>Value of Export</td>
+                            <td>₹80,000</td>
+                            <td>₹20,000</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Total Annual Benefit</strong></td>
+                            <td><strong>₹3.20 Lakhs</strong></td>
+                            <td><strong>₹3.80 Lakhs</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Installation Cost</td>
+                            <td>₹4,00,000</td>
+                            <td>₹4,00,000</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Payback Period</strong></td>
+                            <td><strong>~4.2 Years</strong></td>
+                            <td><strong>~3.2 Years</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="roi-visual">
+                <div class="roi-chart-card">
+                    <div class="roi-chart-title">
+                        <i class="fas fa-hourglass-half"></i>
+                        Payback Period Comparison
+                    </div>
+                    <div class="payback-visual">
+                        <div class="payback-bar without">
+                            <span class="payback-years">4.2</span>
+                            <span class="payback-label">Without ORBIT AI</span>
+                        </div>
+                        <div class="payback-bar with">
+                            <span class="payback-years">3.2</span>
+                            <span class="payback-label">With ORBIT AI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="roi-chart-card">
+                    <div class="roi-chart-title">
+                        <i class="fas fa-bolt"></i>
+                        Self-Consumption Rate
+                    </div>
+                    <div class="consumption-bars">
+                        <div class="consumption-item">
+                            <span class="consumption-label">Before</span>
+                            <div class="consumption-bar-container">
+                                <div class="consumption-bar before">60%</div>
+                            </div>
+                        </div>
+                        <div class="consumption-item">
+                            <span class="consumption-label">After</span>
+                            <div class="consumption-bar-container">
+                                <div class="consumption-bar after">90%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESG Section -->
+    <section class="esg-section" id="esg">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fas fa-globe"></i>
+                    Sustainability
+                </div>
+                <h2 class="section-title">ESG Impact & Alignment</h2>
+                <p class="section-subtitle">
+                    Positioned for institutional funding, CSR initiatives, and sustainability-focused investments.
+                </p>
+            </div>
+            <div class="esg-hero">
+                <div class="esg-main">
+                    <div class="carbon-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="carbon-value">14.7</div>
+                    <div class="carbon-unit">Metric Tons CO₂ Reduced Annually</div>
+                    <p class="carbon-desc">
+                        Based on 18,000 units of solar self-consumption and India's average grid emission factor of 0.82 kg CO₂ per unit.
+                    </p>
+                </div>
+                <div class="esg-cards">
+                    <div class="esg-card">
+                        <div class="esg-letter e">E</div>
+                        <div class="esg-content">
+                            <h4>Environmental</h4>
+                            <ul class="esg-points">
+                                <li>Reduced grid dependency</li>
+                                <li>Lower carbon emissions</li>
+                                <li>Improved renewable utilization</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="esg-card">
+                        <div class="esg-letter s">S</div>
+                        <div class="esg-content">
+                            <h4>Social</h4>
+                            <ul class="esg-points">
+                                <li>Sustainable campus operations</li>
+                                <li>Reduced infrastructure strain</li>
+                                <li>Energy accountability</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="esg-card">
+                        <div class="esg-letter g">G</div>
+                        <div class="esg-content">
+                            <h4>Governance</h4>
+                            <ul class="esg-points">
+                                <li>Data-driven monitoring</li>
+                                <li>Auditable reporting</li>
+                                <li>Transparent decisions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section class="investment-section" id="investment">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fas fa-handshake"></i>
+                    Investment Rationale
+                </div>
+                <h2 class="section-title">Why Invest in ORBIT AI</h2>
+                <p class="section-subtitle">
+                    A low-risk, high-impact investment for educational institutions and large campuses.
+                </p>
+            </div>
+            <div class="investment-grid">
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-battery-empty"></i>
+                    </div>
+                    <div class="investment-title">No Battery Dependency</div>
+                    <div class="investment-desc">Optimizes existing infrastructure without expensive battery storage systems</div>
+                </div>
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="investment-title">Low Incremental Cost</div>
+                    <div class="investment-desc">Minimal additional investment over existing solar infrastructure</div>
+                </div>
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="investment-title">Value Conversion</div>
+                    <div class="investment-desc">Converts low-value grid export into high-value direct savings</div>
+                </div>
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="investment-title">Improved ROI</div>
+                    <div class="investment-desc">Better returns without increasing capital expenditure</div>
+                </div>
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <div class="investment-title">Linear Scalability</div>
+                    <div class="investment-desc">Scales seamlessly across buildings and campuses</div>
+                </div>
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="investment-title">Low Risk Profile</div>
+                    <div class="investment-desc">Proven technology with measurable, auditable outcomes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <h2 class="cta-title">Ready to Maximize Your Solar ROI?</h2>
+            <p class="cta-subtitle">
+                Join leading institutions in unlocking the full potential of solar energy with intelligent optimization.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://orbitcampus.netlify.app" target="_blank" class="btn-white">
+                    <i class="fas fa-external-link-alt"></i>
+                    Visit Dashboard
+                </a>
+                <a href="/presentation.html" class="btn-outline-white">
+                    <i class="fas fa-play"></i>
+                    View Full Presentation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: white;">
+                    <i class="fas fa-solar-panel"></i>
+                </div>
+                <span style="font-size: 1.25rem; font-family: 'Rajdhani', sans-serif; font-weight: 800;">ORBIT <span style="background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AI</span></span>
+            </div>
+            <p class="footer-text">© 2025 ORBIT AI. Smart Solar Optimization for Sustainable Campuses.</p>
+            <div class="footer-links">
+                <a href="/presentation.html">Presentation</a>
+                <a href="https://orbitcampus.netlify.app" target="_blank">Dashboard</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Animate chart bars on load
+        setTimeout(() => {
+            document.querySelectorAll('.chart-bar').forEach((bar, index) => {
+                bar.style.transition = `height 0.5s ease ${index * 0.1}s`;
+            });
+        }, 500);
+    </script>
+</body>
+</html>
